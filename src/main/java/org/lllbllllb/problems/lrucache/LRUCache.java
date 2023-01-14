@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * <a href="https://leetcode.com/problems/lru-cache">146. LRU Cache</a>
  */
-public class LRUCache {
+class LRUCache {
     private final int capacity;
     private final Map<Integer, Node> cache;
     private Node head;

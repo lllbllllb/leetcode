@@ -5,7 +5,7 @@ import java.util.LinkedList;
 /**
  * <a href="https://leetcode.com/problems/asteroid-collision">735. Asteroid Collision</a>
  */
-public class Solution {
+class Solution {
 
     public int[] asteroidCollision(int[] asteroids) {
         var state = new LinkedList<Integer>();

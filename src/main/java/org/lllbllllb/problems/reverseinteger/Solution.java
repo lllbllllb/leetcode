@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * <a href="https://leetcode.com/problems/reverse-integer/">7. Reverse Integer</a>
  */
-public class Solution {
+class Solution {
 
     public int reverse(int x) {
         if (x > -1 && x < 10) {
