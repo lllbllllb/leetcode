@@ -14,18 +14,18 @@ class Solution {
         var cursor = 0;
         path.add(cursor);
 
-        allPathsSourceTarget(graph, paths, path, cursor, graph.length - 1);
+        backTracking(graph, paths, path, cursor, graph.length - 1);
 
         return paths;
     }
 
-    private void allPathsSourceTarget(int[][] graph, List<List<Integer>> paths, List<Integer> path, int cursor, int target) {
+    private void backTracking(int[][] graph, List<List<Integer>> paths, List<Integer> path, int cursor, int target) {
         if (cursor == target) {
             paths.add(List.copyOf(path));
         } else {
             for (int vertex : graph[cursor]) {
                 path.add(vertex);
-                allPathsSourceTarget(graph, paths, path, vertex, target);
+                backTracking(graph, paths, path, vertex, target);
                 path.remove(path.size() - 1);
             }
         }
