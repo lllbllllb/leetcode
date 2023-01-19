@@ -2,13 +2,17 @@ package org.lllbllllb.problems.removenthnodefromendoflist;
 
 /**
  * Definition for singly-linked list.
- * public class ListNode {
+ * <pre>
+ *     public class ListNode {
  *     int val;
  *     ListNode next;
  *     ListNode() {}
  *     ListNode(int val) { this.val = val; }
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
+ * </pre>
+ *
+ * @see <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">19. Remove Nth Node From End of List</a>
  */
 class Solution {
 
@@ -23,7 +27,7 @@ class Solution {
                 prev = target;
                 target = target.next;
             } else {
-                count ++;
+                count++;
             }
 
             current = current.next;

@@ -1,4 +1,4 @@
-package org.lllbllllb.problems.removenthnodefromendoflist;
+package org.lllbllllb.problems.mergetwosortedlists;
 
 import java.util.Objects;
 
