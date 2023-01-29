@@ -39,7 +39,7 @@ class Solution {
     }
 
     // 59 ms
-    public int numTilePossibilities1(String tiles) {
+    public int numTilePossibilities2(String tiles) {
         var res = new HashSet<String>();
 
         backtracking(tiles, res, 0, "", new HashSet<>());
