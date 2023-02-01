@@ -19,6 +19,27 @@ class SolutionTest {
     void longestConsecutive2() {
         var res = solution.longestConsecutive(new int[]{0, 3, 7, 2, 5, 8, 4, 6, 0, 1});
 
-        assertEquals(4, res);
+        assertEquals(9, res);
+    }
+
+    @Test
+    void longestConsecutive3() {
+        var res = solution.longestConsecutive(new int[]{-1, -9, -5, -2, -9, 8, -8, 1, -9, -3, -3});
+
+        assertEquals(3, res);
+    }
+
+    @Test
+    void longestConsecutive4() {
+        var res = solution.longestConsecutive(new int[]{-2, -3, -3, 7, -3, 0, 5, 0, -8, -4, -1, 2});
+
+        assertEquals(5, res);
+    }
+
+    @Test
+    void longestConsecutive5() {
+        var res = solution.longestConsecutive(new int[]{});
+
+        assertEquals(0, res);
     }
 }
