@@ -20,7 +20,7 @@ import java.util.List;
  * }
  * </pre>
  *
- * @see <a href="https://leetcode.com/problems/binary-tree-paths/description/">257. Binary Tree Paths</a>
+ * <a href="https://leetcode.com/problems/binary-tree-paths/description/">257. Binary Tree Paths</a>
  */
 class Solution {
 

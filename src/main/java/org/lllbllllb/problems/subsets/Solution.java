@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @see <a href="https://leetcode.com/problems/subsets/">78. Subsets</a>
+ * <a href="https://leetcode.com/problems/subsets/">78. Subsets</a>
  */
 class Solution {
 

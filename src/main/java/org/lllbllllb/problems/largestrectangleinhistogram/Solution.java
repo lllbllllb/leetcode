@@ -1,7 +1,7 @@
 package org.lllbllllb.problems.largestrectangleinhistogram;
 
 /**
- * @see <a href="https://leetcode.com/problems/largest-rectangle-in-histogram/">84. Largest Rectangle in Histogram</a>
+ * <a href="https://leetcode.com/problems/largest-rectangle-in-histogram/">84. Largest Rectangle in Histogram</a>
  */
 class Solution {
 

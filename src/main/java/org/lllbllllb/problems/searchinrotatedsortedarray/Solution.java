@@ -1,7 +1,7 @@
 package org.lllbllllb.problems.searchinrotatedsortedarray;
 
 /**
- * @see <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">33. Search in Rotated Sorted Array</a>
+ * <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">33. Search in Rotated Sorted Array</a>
  */
 class Solution {
 

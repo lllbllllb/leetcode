@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 
 /**
- * @see <a href="https://leetcode.com/problems/longest-consecutive-sequence/">128. Longest Consecutive Sequence</a>
+ * <a href="https://leetcode.com/problems/longest-consecutive-sequence/">128. Longest Consecutive Sequence</a>
  */
 class Solution {
 

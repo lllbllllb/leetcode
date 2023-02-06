@@ -1,7 +1,7 @@
 package org.lllbllllb.problems.findtheindexofthefirstoccurrenceinastring;
 
 /**
- * @see <a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/">28. Find the Index of the First Occurrence in a String</a>
+ * <a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/">28. Find the Index of the First Occurrence in a String</a>
  */
 class Solution {
 

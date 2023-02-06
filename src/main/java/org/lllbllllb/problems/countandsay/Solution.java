@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @see <a href="https://leetcode.com/problems/count-and-say/description/">38. Count and Say</a>
+ * <a href="https://leetcode.com/problems/count-and-say/description/">38. Count and Say</a>
  */
 class Solution {
 

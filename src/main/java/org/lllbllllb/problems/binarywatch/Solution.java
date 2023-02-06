@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @see <a href="https://leetcode.com/problems/binary-watch/">401. Binary Watch</a>
+ * <a href="https://leetcode.com/problems/binary-watch/">401. Binary Watch</a>
  */
 class Solution {
 

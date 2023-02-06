@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @see <a href="https://leetcode.com/problems/permutations/description/">46. Permutations</a>
+ * <a href="https://leetcode.com/problems/permutations/description/">46. Permutations</a>
  */
 class Solution {
 

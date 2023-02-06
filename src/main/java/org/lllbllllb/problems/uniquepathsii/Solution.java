@@ -1,7 +1,7 @@
 package org.lllbllllb.problems.uniquepathsii;
 
 /**
- * @see <a href="https://leetcode.com/problems/unique-paths-ii/description/">63. Unique Paths II</a>
+ * <a href="https://leetcode.com/problems/unique-paths-ii/description/">63. Unique Paths II</a>
  */
 class Solution {
 

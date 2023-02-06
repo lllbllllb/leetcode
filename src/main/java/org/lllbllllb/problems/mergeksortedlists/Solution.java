@@ -12,7 +12,7 @@ package org.lllbllllb.problems.mergeksortedlists;
  * }
  * </pre>
  *
- * @see <a href="https://leetcode.com/problems/merge-k-sorted-lists/">23. Merge k Sorted Lists</a>
+ * <a href="https://leetcode.com/problems/merge-k-sorted-lists/">23. Merge k Sorted Lists</a>
  */
 class Solution {
 

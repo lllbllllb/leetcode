@@ -3,7 +3,7 @@ package org.lllbllllb.problems.dailytemperatures;
 import java.util.LinkedList;
 
 /**
- * @see <a href="https://leetcode.com/problems/daily-temperatures/">739. Daily Temperatures</a>
+ * <a href="https://leetcode.com/problems/daily-temperatures/">739. Daily Temperatures</a>
  */
 class Solution {
 

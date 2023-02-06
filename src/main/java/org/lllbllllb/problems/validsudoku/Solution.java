@@ -1,7 +1,7 @@
 package org.lllbllllb.problems.validsudoku;
 
 /**
- * @see <a href="https://leetcode.com/problems/valid-sudoku/description/">36. Valid Sudoku</a>
+ * <a href="https://leetcode.com/problems/valid-sudoku/description/">36. Valid Sudoku</a>
  */
 class Solution {
 

@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 
 /**
- * @see <a href="https://leetcode.com/problems/car-fleet/">853. Car Fleet</a>
+ * <a href="https://leetcode.com/problems/car-fleet/">853. Car Fleet</a>
  */
 class Solution {
 

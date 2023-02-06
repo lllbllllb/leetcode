@@ -3,7 +3,7 @@ package org.lllbllllb.problems.evaluatereversepolishnotation;
 import java.util.LinkedList;
 
 /**
- * @see <a href="https://leetcode.com/problems/evaluate-reverse-polish-notation/">150. Evaluate Reverse Polish Notation</a>
+ * <a href="https://leetcode.com/problems/evaluate-reverse-polish-notation/">150. Evaluate Reverse Polish Notation</a>
  */
 class Solution {
 

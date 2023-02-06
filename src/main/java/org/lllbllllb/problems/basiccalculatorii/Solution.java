@@ -3,7 +3,7 @@ package org.lllbllllb.problems.basiccalculatorii;
 import java.util.ArrayList;
 
 /**
- * @see <a href="https://leetcode.com/problems/basic-calculator-ii/">227. Basic Calculator II</a>
+ * <a href="https://leetcode.com/problems/basic-calculator-ii/">227. Basic Calculator II</a>
  */
 class Solution {
 

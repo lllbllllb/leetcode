@@ -1,8 +1,8 @@
 package org.lllbllllb.problems.sumofallsubsetxortotals;
 
 /**
- * @see <a href="https://leetcode.com/problems/sum-of-all-subset-xor-totals/">1863. Sum of All Subset XOR Totals</a>
- * @see <a href="https://leetcode.com/problems/sum-of-all-subset-xor-totals/solutions/1242073/java-backtracking-approach-with-explanation/">Backtracking approach with explanation</a>
+ * <a href="https://leetcode.com/problems/sum-of-all-subset-xor-totals/">1863. Sum of All Subset XOR Totals</a>
+ * <a href="https://leetcode.com/problems/sum-of-all-subset-xor-totals/solutions/1242073/java-backtracking-approach-with-explanation/">Backtracking approach with explanation</a>
  */
 class Solution {
 

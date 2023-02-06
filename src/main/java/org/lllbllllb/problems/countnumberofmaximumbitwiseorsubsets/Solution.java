@@ -1,7 +1,7 @@
 package org.lllbllllb.problems.countnumberofmaximumbitwiseorsubsets;
 
 /**
- * @see <a href="https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/">2044. Count Number of Maximum Bitwise-OR Subsets</a>
+ * <a href="https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/">2044. Count Number of Maximum Bitwise-OR Subsets</a>
  */
 class Solution {
 

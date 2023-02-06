@@ -1,7 +1,7 @@
 package org.lllbllllb.problems.firstmissingpositive;
 
 /**
- * @see <a href="https://leetcode.com/problems/first-missing-positive/description/">41. First Missing Positive</a>
+ * <a href="https://leetcode.com/problems/first-missing-positive/description/">41. First Missing Positive</a>
  */
 class Solution {
 

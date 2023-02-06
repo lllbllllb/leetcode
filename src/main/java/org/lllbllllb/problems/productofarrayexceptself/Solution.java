@@ -1,7 +1,7 @@
 package org.lllbllllb.problems.productofarrayexceptself;
 
 /**
- * @see <a href="https://leetcode.com/problems/product-of-array-except-self/">238. Product of Array Except Self</a>
+ * <a href="https://leetcode.com/problems/product-of-array-except-self/">238. Product of Array Except Self</a>
  */
 class Solution {
 

@@ -1,7 +1,7 @@
 package org.lllbllllb.problems.rotatearray;
 
 /**
- * @see <a href="https://leetcode.com/problems/rotate-array/">189. Rotate Array</a>
+ * <a href="https://leetcode.com/problems/rotate-array/">189. Rotate Array</a>
  */
 class Solution {
 

@@ -1,7 +1,7 @@
 package org.lllbllllb.problems.findfirstandlastpositionofelementinsortedarray;
 
 /**
- * @see <a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/">34. Find First and Last Position of Element in Sorted Array</a>
+ * <a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/">34. Find First and Last Position of Element in Sorted Array</a>
  */
 class Solution {
     public int[] searchRange(int[] nums, int target) {

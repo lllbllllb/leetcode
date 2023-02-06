@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @see <a href="https://leetcode.com/problems/letter-tile-possibilities/">1079. Letter Tile Possibilities</a>
+ * <a href="https://leetcode.com/problems/letter-tile-possibilities/">1079. Letter Tile Possibilities</a>
  */
 class Solution {
 
