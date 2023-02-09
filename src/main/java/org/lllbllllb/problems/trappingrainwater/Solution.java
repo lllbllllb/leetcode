@@ -8,9 +8,7 @@ class Solution {
     public int trap(int[] height) {
         var len = height.length;
         var left = new int[len];
-        left[0] = 0;
         var right = new int[len];
-        right[len - 1] = 0;
 
         for (int i = 1; i < len; i++) {
             left[i] = Math.max(left[i - 1], height[i - 1]);
