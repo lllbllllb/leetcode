@@ -91,4 +91,11 @@ class SolutionTest {
 
         assertEquals(1, res);
     }
+
+    @Test
+    void search13() {
+        var res = solution.search(new int[]{5, 1, 3}, 5);
+
+        assertEquals(0, res);
+    }
 }
