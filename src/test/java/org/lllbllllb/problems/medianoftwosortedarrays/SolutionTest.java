@@ -42,7 +42,7 @@ class SolutionTest {
     void findMedianSortedArrays5() {
         var res = solution.findMedianSortedArrays(new int[]{1, 3, 5, 7, 9}, new int[]{8});
 
-        assertEquals(6.500, res);
+        assertEquals(6.000, res);
     }
 
     @Test
@@ -56,7 +56,7 @@ class SolutionTest {
     void findMedianSortedArrays7() {
         var res = solution.findMedianSortedArrays(new int[]{1, 3, 5, 7, 9, 11}, new int[]{6});
 
-        assertEquals(5.0000, res);
+        assertEquals(6.0000, res);
     }
 
     @Test
