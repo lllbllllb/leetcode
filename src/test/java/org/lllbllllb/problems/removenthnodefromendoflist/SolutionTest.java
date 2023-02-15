@@ -20,7 +20,7 @@ class SolutionTest {
     @Test
     void removeNthFromEnd2() {
         var source = generate(1);
-        var res = solution.removeNthFromEnd(source, 2);
+        var res = solution.removeNthFromEnd(source, 1);
 
         assertEquals(null, res);
     }

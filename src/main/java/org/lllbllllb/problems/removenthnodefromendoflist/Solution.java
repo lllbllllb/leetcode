@@ -16,7 +16,35 @@ package org.lllbllllb.problems.removenthnodefromendoflist;
  */
 class Solution {
 
+    // 0 ms, 40.4 MB
     public ListNode removeNthFromEnd(ListNode head, int n) {
+        var fast = head;
+
+        while (n != 0) {
+            fast = fast.next;
+            n--;
+        }
+
+        if (fast == null) {
+            return head.next;
+        }
+
+        var slow = head;
+
+        while (fast != null) {
+            if (fast.next == null) {
+                slow.next = slow.next.next;
+            }
+
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return head;
+    }
+
+    // 0 ms, 40.4 MB
+    public ListNode removeNthFromEnd1(ListNode head, int n) {
         ListNode prev = null;
         var target = head;
         var count = 1;
