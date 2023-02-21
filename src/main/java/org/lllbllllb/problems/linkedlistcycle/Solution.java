@@ -22,11 +22,7 @@ public class Solution {
     public boolean hasCycle(ListNode head) {
         var fast = head;
 
-        while (fast != null) {
-            if (fast.next == null) {
-                return false;
-            }
-
+        while (fast != null && fast.next != null) {
             if (fast.next == head) {
                 return true;
             }

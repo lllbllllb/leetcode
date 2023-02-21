@@ -1,23 +1,23 @@
-package org.lllbllllb.problems.binarytreepaths;
+package org.lllbllllb.domain;
 
 import java.util.Objects;
 
-class TreeNode {
+public class TreeNode {
 
-    int val;
+    public int val;
 
-    TreeNode left;
+    public TreeNode left;
 
-    TreeNode right;
+    public TreeNode right;
 
-    TreeNode() {
+    public TreeNode() {
     }
 
-    TreeNode(int val) {
+    public TreeNode(int val) {
         this.val = val;
     }
 
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    public TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
@@ -28,12 +28,12 @@ class TreeNode {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TreeNode treeNode = (TreeNode) o;
-        return val == treeNode.val;
+        return val == treeNode.val && Objects.equals(left, treeNode.left) && Objects.equals(right, treeNode.right);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(val);
+        return Objects.hash(val, left, right);
     }
 
     @Override

@@ -37,6 +37,20 @@ class SolutionTest {
         assertEquals(generate(-10_000, -10_000, -10_000, 0, 0, 0, 10_000, 10_000, 10_000), res);
     }
 
+    @Test
+    void mergeKLists5() { // [],[-1,5,11],[],[6,10]
+        var res = solution.mergeKLists(new ListNode[]{null, generate(-1,5,11), null, generate(6, 10)});
+
+        assertEquals(generate(-1, 5, 6, 10, 11), res);
+    }
+
+    @Test
+    void mergeKLists6() {
+        var res = solution.mergeKLists(new ListNode[]{generate(1), generate(2), generate(3), generate(4)});
+
+        assertEquals(generate(1, 2, 3, 4), res);
+    }
+
 
     private ListNode generate(int... vals) {
         var tail = new ListNode(vals[vals.length - 1]);

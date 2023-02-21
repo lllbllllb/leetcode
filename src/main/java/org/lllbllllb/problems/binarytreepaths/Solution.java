@@ -3,6 +3,8 @@ package org.lllbllllb.problems.binarytreepaths;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.lllbllllb.domain.TreeNode;
+
 /**
  * Definition for a binary tree node.
  * <pre>
