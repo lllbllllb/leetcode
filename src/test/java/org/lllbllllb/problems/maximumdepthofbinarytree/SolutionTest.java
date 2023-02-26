@@ -3,7 +3,7 @@ package org.lllbllllb.problems.maximumdepthofbinarytree;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.lllbllllb.domain.model.TreeNodeGenerator.generateBinaryTree;
+import org.lllbllllb.domain.TreeNode;
 
 class SolutionTest {
 
@@ -11,14 +11,14 @@ class SolutionTest {
 
     @Test
     void maxDepth1() {
-        var res = solution.maxDepth(generateBinaryTree(3, 9, 20, null, null, 15, 7));
+        var res = solution.maxDepth(TreeNode.of(3, 9, 20, null, null, 15, 7));
 
         assertEquals(3, res);
     }
 
     @Test
     void maxDepth2() {
-        var res = solution.maxDepth(generateBinaryTree(1, null, 2));
+        var res = solution.maxDepth(TreeNode.of(1, null, 2));
 
         assertEquals(2, res);
     }

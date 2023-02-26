@@ -24,7 +24,24 @@ import org.lllbllllb.domain.TreeNode;
 class Solution {
 
     public int diameterOfBinaryTree(TreeNode root) {
+        var observer = new int[1];
 
-        return 0;
+        dfs(root, observer);
+
+        return observer[0];
+    }
+
+    private int dfs(TreeNode node, int[] observer) {
+        if (node == null) {
+            return 0;
+        }
+
+        var left = dfs(node.left, observer);
+        var right = dfs(node.right, observer);
+        var currDiameter = left + right;
+
+        observer[0] = Math.max(observer[0], currDiameter);
+
+        return 1 + Math.max(left, right);
     }
 }
