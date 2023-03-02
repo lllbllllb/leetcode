@@ -56,4 +56,18 @@ class SolutionTest {
 
         assertEquals(9, res);
     }
+
+    @Test
+    void largestRectangleArea8() {
+        var res = solution.largestRectangleArea(new int[]{4, 2, 0, 3, 2, 5});
+
+        assertEquals(6, res);
+    }
+
+    @Test
+    void largestRectangleArea9() {
+        var res = solution.largestRectangleArea(new int[]{3, 6, 5, 7, 4, 8, 1, 0});
+
+        assertEquals(20, res);
+    }
 }

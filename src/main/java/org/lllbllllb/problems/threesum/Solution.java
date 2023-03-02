@@ -23,31 +23,29 @@ class Solution {
         for (int i = 0; i < nums.length - 1 && nums[i] < 1; i++) {
             var iTh = nums[i];
 
-            if (i > 0 && iTh == nums[i - 1]) {
-                continue;
-            }
+            if (i < 1 || iTh != nums[i - 1]) {
+                var j = i + 1;
+                var k = len - 1;
 
-            var j = i + 1;
-            var k = len - 1;
+                while (j < k) {
+                    var jTh = nums[j];
+                    var kTh = nums[k];
+                    var sum = iTh + jTh + kTh;
 
-            while (j < k) {
-                var jTh = nums[j];
-                var kTh = nums[k];
-                var sum = iTh + jTh + kTh;
-
-                if(sum > 0) {
-                    k--;
-                } else if (sum < 0) {
-                    j++;
-                } else {
-                    res.add(List.of(iTh, jTh, kTh));
-
-                    while (j < k && jTh == nums[j]) {
-                        j++;
-                    }
-
-                    while (j < k & kTh == nums[k]) {
+                    if(sum > 0) {
                         k--;
+                    } else if (sum < 0) {
+                        j++;
+                    } else {
+                        res.add(List.of(iTh, jTh, kTh));
+
+                        while (j < k && jTh == nums[j]) {
+                            j++;
+                        }
+
+                        while (j < k & kTh == nums[k]) {
+                            k--;
+                        }
                     }
                 }
             }

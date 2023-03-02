@@ -16,7 +16,7 @@ import java.util.HashSet;
  * }
  * </pre>
  */
-public class Solution {
+class Solution {
 
     // 0 ms, 43.6 MB
     public boolean hasCycle(ListNode head) {
