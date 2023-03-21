@@ -49,4 +49,18 @@ class SolutionTest {
 
         assertEquals(4, res);
     }
+
+    @Test
+    void firstMissingPositive7() {
+        var res = solution.firstMissingPositive(new int[]{2});
+
+        assertEquals(1, res);
+    }
+
+    @Test
+    void firstMissingPositive8() {
+        var res = solution.firstMissingPositive(new int[]{2147483647});
+
+        assertEquals(1, res);
+    }
 }

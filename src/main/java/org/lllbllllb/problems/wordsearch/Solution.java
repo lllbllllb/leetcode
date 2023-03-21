@@ -5,7 +5,59 @@ package org.lllbllllb.problems.wordsearch;
  */
 class Solution {
 
+    // 172 ms, 40.3 MB
     public boolean exist(char[][] board, String word) {
+        var x = board.length;
+        var y = board[0].length;
+
+        if (word.length() > x * y) {
+            return false;
+        }
+
+        var head = word.charAt(0);
+
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
+                if (board[i][j] == head) {
+                    var exist = backtracking(board, i, j, word, 0);
+
+                    if (exist) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+
+    private boolean backtracking(char[][] board, int i, int j, String word, int wordCursor) {
+        if (wordCursor == word.length()) {
+            return true;
+        }
+
+        if (i == -1 || j == -1 || i == board.length || j == board[0].length || board[i][j] != word.charAt(wordCursor)) {
+            return false;
+        }
+
+        var currentChar = board[i][j];
+        var wordCursorNext = wordCursor + 1;
+
+        board[i][j] = 0;
+
+        var res = backtracking(board, i + 1, j, word, wordCursorNext)
+            || backtracking(board, i, j + 1, word, wordCursorNext)
+            || backtracking(board, i - 1, j, word, wordCursorNext)
+            || backtracking(board, i, j - 1, word, wordCursorNext);
+
+        board[i][j] = currentChar;
+
+        return res;
+    }
+
+    // 131 ms, 43 MB
+    public boolean exist1(char[][] board, String word) {
         var len = board.length;
         var hei = board[0].length;
 

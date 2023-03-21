@@ -1,5 +1,8 @@
 package org.lllbllllb.problems.implementtrieprefixtree;
 
+/**
+ * <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">208. Implement Trie (Prefix Tree)</a>
+ */
 // 40 ms, 51 MB
 class Trie {
     private final TrieNode trie = new TrieNode();

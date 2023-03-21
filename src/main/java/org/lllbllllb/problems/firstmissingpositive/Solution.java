@@ -7,6 +7,35 @@ class Solution {
 
     // 1 ms, 50.7 MB
     public int firstMissingPositive(int[] nums) {
+        var len = nums.length;
+        var mark = len + 1;
+
+        if (len == 1 && nums[0] != 1) {
+            return 1;
+        }
+
+        for (var num : nums) {
+            var next = num;
+
+            while (next > 0 && next < mark) {
+                var idx = next - 1;
+                var tmp = nums[idx];
+                nums[idx] = Integer.MAX_VALUE;
+                next = tmp;
+            }
+        }
+
+        for (int i = 0; i < len; i++) {
+            if (nums[i] != Integer.MAX_VALUE) {
+                return i + 1;
+            }
+        }
+
+        return mark;
+    }
+
+    // 1 ms, 50.7 MB
+    public int firstMissingPositive2(int[] nums) {
         var mark = new boolean[nums.length + 1]; // cheat - not constant memory
 
         for (var num : nums) {

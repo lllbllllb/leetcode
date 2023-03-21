@@ -35,7 +35,11 @@ class SolutionTest {
     */
     @Test
     void exist3() {
-        var res = solution.exist(new char[][]{{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}}, "ABCB");
+        var res = solution.exist(new char[][]{
+            {'A','B','C','E'},
+            {'S','F','C','S'},
+            {'A','D','E','E'}
+        }, "ABCB");
 
         assertFalse(res);
     }

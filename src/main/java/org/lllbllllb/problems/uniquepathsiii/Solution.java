@@ -5,11 +5,12 @@ package org.lllbllllb.problems.uniquepathsiii;
  */
 class Solution {
 
-    // 0-1 ms
+    // 0 ms, 40 MB
     public int uniquePathsIII(int[][] grid) {
         var iStart = -1;
         var jStart = -1;
         var walls = 0;
+        var visited = new boolean[grid.length][grid[0].length];
 
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
@@ -22,13 +23,38 @@ class Solution {
             }
         }
 
-        var visited = new boolean[grid.length][grid[0].length];
-        visited[iStart][jStart] = true;
 
         return backtracking(grid, iStart, jStart, visited, 1, grid.length * grid[0].length - walls);
     }
 
     private int backtracking(int[][] grid, int i, int j, boolean[][] visited, int count, int target) {
+        if (i == grid.length || i == -1 || j == grid[0].length || j == -1 || grid[i][j] == -1 || visited[i][j]) {
+            return 0;
+        }
+
+        if (grid[i][j] == 2) {
+            if (target == count) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        var res = 0;
+
+        visited[i][j] = true;
+
+        res += backtracking(grid, i + 1, j, visited, count + 1, target);
+        res += backtracking(grid, i - 1, j, visited, count + 1, target);
+        res += backtracking(grid, i, j + 1, visited, count + 1, target);
+        res += backtracking(grid, i, j - 1, visited, count + 1, target);
+
+        visited[i][j] = false;
+
+        return res;
+    }
+
+    private int backtracking1(int[][] grid, int i, int j, boolean[][] visited, int count, int target) {
         if (grid[i][j] == 2) {
             if (target == count) {
                 return 1;
