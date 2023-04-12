@@ -8,8 +8,33 @@ import java.util.List;
  */
 class Solution {
 
-    // 1 ms
+    // 1 ms, 42.9 MB
     public List<List<Integer>> permute(int[] nums) {
+        var res = new ArrayList<List<Integer>>();
+
+        backtracking(nums, new boolean[nums.length], new ArrayList<>(nums.length), res);
+
+        return res;
+    }
+
+    private void backtracking(int[] nums, boolean[] visited, List<Integer> sub, List<List<Integer>> res) {
+        if (sub.size() == nums.length) {
+            res.add(List.copyOf(sub));
+        } else {
+            for (int i = 0; i < nums.length; i++) {
+                if (!visited[i]) {
+                    sub.add(nums[i]);
+                    visited[i] = true;
+                    backtracking(nums, visited, sub, res);
+                    sub.remove(sub.size() - 1);
+                    visited[i] = false;
+                }
+            }
+        }
+    }
+
+    // 1 ms, 43 MB
+    public List<List<Integer>> permute2(int[] nums) {
         var res = new ArrayList<List<Integer>>();
 
         backtracking(nums, res, 0);
@@ -37,32 +62,6 @@ class Solution {
 
                 nums[i] = ith;
                 nums[cursor] = cth;
-            }
-        }
-    }
-
-    // 1 ms
-    public List<List<Integer>> permute1(int[] nums) {
-        var res = new ArrayList<List<Integer>>();
-
-        backtracking(nums, res, new ArrayList<>());
-
-        return res;
-    }
-
-    private void backtracking(int[] nums, List<List<Integer>> res, List<Integer> curr) {
-        if (curr.size() == nums.length) {
-            res.add(List.copyOf(curr));
-        } else {
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] != Integer.MIN_VALUE) {
-                    var val = nums[i];
-                    curr.add(val);
-                    nums[i] = Integer.MIN_VALUE;
-                    backtracking(nums, res, curr);
-                    curr.remove(curr.size() - 1);
-                    nums[i] = val;
-                }
             }
         }
     }
