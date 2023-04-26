@@ -44,25 +44,30 @@ class Solution {
 
     private void backtracking(int[] nums, List<List<Integer>> res, int cursor) {
         if (cursor == nums.length) {
-            var tmp = new ArrayList<Integer>(nums.length);
-
-            for (var num : nums) {
-                tmp.add(num);
-            }
-
-            res.add(tmp);
-        } else {
-            for (int i = cursor; i < nums.length; i++) {
-                var ith = nums[i];
-                var cth = nums[cursor];
-                nums[i] = cth;
-                nums[cursor] = ith;
-
-                backtracking(nums, res, cursor + 1);
-
-                nums[i] = ith;
-                nums[cursor] = cth;
-            }
+            res.add(toList(nums));
+            return;
         }
+
+        for (int i = cursor; i < nums.length; i++) {
+            swap(nums, i, cursor);
+            backtracking(nums, res, cursor + 1);
+            swap(nums, i, cursor);
+        }
+    }
+
+    private List<Integer> toList(int[] nums) {
+        var list = new ArrayList<Integer>(nums.length);
+
+        for (var num : nums) {
+            list.add(num);
+        }
+
+        return list;
+    }
+
+    private void swap(int[] nums, int x, int y) {
+        var tmp = nums[x];
+        nums[x] = nums[y];
+        nums[y] = tmp;
     }
 }

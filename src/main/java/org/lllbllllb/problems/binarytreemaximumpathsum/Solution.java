@@ -22,15 +22,38 @@ import org.lllbllllb.domain.TreeNode;
  */
 class Solution {
 
-    private int max = -2000;
+    private int max;
 
+    // 1 ms, 44.4 MB
     public int maxPathSum(TreeNode node) {
+        max = node.val;
         maxPath(node);
 
         return max;
     }
 
     public int maxPath(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+
+        var left = Math.max(maxPath(node.left), 0);
+        var right = Math.max(maxPath(node.right), 0);
+
+        max = Math.max(max, left + node.val + right);
+
+        return Math.max(left, right) + node.val;
+    }
+
+    // 1 ms, 44.4 MB
+    public int maxPathSum1(TreeNode node) {
+        max = -2000;
+        maxPath(node);
+
+        return max;
+    }
+
+    public int maxPath1(TreeNode node) {
         if (node == null) {
             return -2000;
         }
