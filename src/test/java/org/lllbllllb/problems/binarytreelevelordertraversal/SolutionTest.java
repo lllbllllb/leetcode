@@ -3,9 +3,9 @@ package org.lllbllllb.problems.binarytreelevelordertraversal;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.lllbllllb.domain.TreeNode;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import org.lllbllllb.domain.TreeNode;
 
 class SolutionTest {
 

@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.lllbllllb.domain.TreeNode;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.lllbllllb.domain.TreeNode;
 
 class SolutionTest {
 

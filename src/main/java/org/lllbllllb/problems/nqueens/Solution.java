@@ -15,7 +15,7 @@ class Solution {
 
     private static final char EMPTY = '.';
 
-    // 5     ms, 43.4 MB
+    // 5 ms, 43.4 MB
     public List<List<String>> solveNQueens(int n) {
         var combinations = new ArrayList<List<String>>();
         var board = new char[n][n];
