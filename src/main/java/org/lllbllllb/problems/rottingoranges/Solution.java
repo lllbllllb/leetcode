@@ -7,6 +7,7 @@ import java.util.LinkedList;
  */
 class Solution {
 
+    // 1 ms, 41.7 MB
     public int orangesRotting(int[][] grid) {
         var count = 0;
         var freshCount = 0;
@@ -79,5 +80,68 @@ class Solution {
         }
 
         return freshCount == 0 ? count : -1;
+    }
+
+    // 2 ms, 42.2 MB
+    public int orangesRotting1(int[][] grid) {
+        var rows = grid.length;
+        var cols = grid[0].length;
+        var rottensQueue = new LinkedList<int[]>();
+        var freshCount = 0;
+        var minutes = 0;
+
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (grid[r][c] == 1) {
+                    freshCount++;
+                } else if (grid[r][c] == 2) {
+                    rottensQueue.offer(new int[]{r, c});
+                }
+            }
+        }
+
+        while (!rottensQueue.isEmpty()) {
+            var rottens = rottensQueue.size();
+
+            for (int i = 0; i < rottens; i++) {
+                var rotten = rottensQueue.poll();
+
+                var prevR = rotten[0] - 1;
+                if (rotten[0] != 0 && grid[prevR][rotten[1]] == 1) {
+                    rottensQueue.offer(new int[]{prevR, rotten[1]});
+                    grid[prevR][rotten[1]] = 2;
+                    freshCount--;
+                }
+
+                var nextR = rotten[0] + 1;
+                if (rotten[0] != rows - 1 && grid[nextR][rotten[1]] == 1) {
+                    rottensQueue.offer(new int[]{nextR, rotten[1]});
+                    grid[nextR][rotten[1]] = 2;
+                    freshCount--;
+                }
+
+                var prevC = rotten[1] - 1;
+                if (rotten[1] != 0 && grid[rotten[0]][prevC] == 1) {
+                    rottensQueue.offer(new int[]{rotten[0], prevC});
+                    grid[rotten[0]][prevC] = 2;
+                    freshCount--;
+                }
+
+
+                var nextC = rotten[1] + 1;
+                if (rotten[1] != cols - 1 && grid[rotten[0]][nextC] == 1) {
+                    rottensQueue.offer(new int[]{rotten[0], nextC});
+                    grid[rotten[0]][nextC] = 2;
+                    freshCount--;
+                }
+
+            }
+
+            if (!rottensQueue.isEmpty()) {
+                minutes++;
+            }
+        }
+
+        return freshCount == 0 ? minutes : -1;
     }
 }
