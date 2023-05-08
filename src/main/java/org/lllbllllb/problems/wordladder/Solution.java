@@ -153,7 +153,6 @@ class Solution {
                     lastWord[j] = original;
                 }
             }
-
         }
 
         return 0;
