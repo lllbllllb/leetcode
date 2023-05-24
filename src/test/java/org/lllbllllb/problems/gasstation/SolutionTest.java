@@ -30,4 +30,20 @@ class SolutionTest {
     }
 
 
+    @Test
+    void canCompleteCircuit4() {
+        var res = solution.canCompleteCircuit(new int[]{5, 8, 2, 8}, new int[]{6, 5, 6, 6});
+
+        assertEquals(3, res);
+    }
+
+
+    @Test
+    void canCompleteCircuit5() {
+        var res = solution.canCompleteCircuit(new int[]{5, 1, 2, 3, 4}, new int[]{4, 4, 1, 5, 1});
+
+        assertEquals(4, res);
+    }
+
+
 }

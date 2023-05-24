@@ -5,8 +5,32 @@ package org.lllbllllb.problems.gasstation;
  */
 class Solution {
 
-    // 1 ms
+    // 2ms, 55.8 MB
     public int canCompleteCircuit(int[] gas, int[] cost) {
+        var station = 0;
+        var totalBalance = 0;
+        var balance = 0;
+
+        for (int i = 0; i < gas.length; i++) {
+            if (balance < 0) {
+                balance = 0;
+                station = i;
+            }
+
+            var localBalance = gas[i] - cost[i];
+            balance += localBalance;
+            totalBalance += localBalance;
+        }
+
+        if (totalBalance < 0) {
+            return -1;
+        }
+
+        return station;
+    }
+
+    // 1 ms, 62.6 MB
+    public int canCompleteCircuit3(int[] gas, int[] cost) {
         var n = gas.length;
         var tank = 0;
         var debt = Integer.MAX_VALUE;
