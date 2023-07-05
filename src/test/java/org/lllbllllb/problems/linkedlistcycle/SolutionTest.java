@@ -1,6 +1,7 @@
 package org.lllbllllb.problems.linkedlistcycle;
 
 import org.junit.jupiter.api.Test;
+import org.lllbllllb.domain.ListNode;
 
 class SolutionTest {
 

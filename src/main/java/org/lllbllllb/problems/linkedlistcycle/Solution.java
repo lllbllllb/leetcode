@@ -2,6 +2,8 @@ package org.lllbllllb.problems.linkedlistcycle;
 
 import java.util.HashSet;
 
+import org.lllbllllb.domain.ListNode;
+
 /**
  * <a href="https://leetcode.com/problems/linked-list-cycle/">141. Linked List Cycle</a>
  * Definition for singly-linked list.
