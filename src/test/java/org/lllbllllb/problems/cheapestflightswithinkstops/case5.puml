@@ -1,0 +1,10 @@
+@startuml
+(0) --> (1) #red;text:red : 5
+(1) --> (2) : 5
+(0) --> (3) : 2
+(3) --> (1) : 2
+(1) --> (4) #red;text:red : 1
+(4) --> (2) #red;text:red : 1
+usecase (0) #palegreen
+usecase (2) #palegreen
+@enduml

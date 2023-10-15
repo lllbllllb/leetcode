@@ -14,6 +14,8 @@ https://leetcode.com/lllbllllb/
 * monotonic stack (inc/dec)
 * minimum spanning tree (mst, prim's algorithm)
 * djikstra
+* A-star
+* Bellman–Ford
 
 * binary-indexed-tree (fanvic-tree)
 * segment tree (interval tree)
