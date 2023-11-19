@@ -4,7 +4,7 @@ https://leetcode.com/lllbllllb/
 * dfs
 * bfs
 * backtracking (bf)
-* dynamic programming
+* dynamic programming (grid / memoization)
 * heap / priority queue
 * quick sort
 * quick select
