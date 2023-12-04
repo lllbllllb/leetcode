@@ -52,4 +52,33 @@ class Solution {
 
         return dp[m - 1][n - 1];
     }
+
+    // 32ms, 58.17MB
+    public int longestCommonSubsequence2(String text1, String text2) {
+        return dfs(text1, 0, text2, 0,  new Integer[text1.length()][text2.length()]);
+    }
+
+    private int dfs(String text1, int cursor1, String text2, int cursor2, Integer[][] mem) {
+        if (cursor1 == text1.length() || cursor2 == text2.length()) {
+            return 0;
+        }
+
+        if (mem[cursor1][cursor2] != null) {
+            return mem[cursor1][cursor2];
+        }
+
+        var c1 = text1.charAt(cursor1);
+        var c2 = text2.charAt(cursor2);
+
+        if (c1 == c2) {
+            mem[cursor1][cursor2] = 1 + dfs(text1, cursor1 + 1, text2, cursor2 + 1, mem);
+        } else {
+            mem[cursor1][cursor2] = Math.max(
+                dfs(text1, cursor1 + 1, text2, cursor2, mem),
+                dfs(text1, cursor1, text2, cursor2 + 1, mem)
+            );
+        }
+
+        return mem[cursor1][cursor2];
+    }
 }

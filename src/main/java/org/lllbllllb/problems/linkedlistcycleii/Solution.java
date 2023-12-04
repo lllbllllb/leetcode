@@ -18,7 +18,7 @@ import org.lllbllllb.domain.ListNode;
  * }
  * </pre>
  */
-public class Solution {
+class Solution {
 
     // 0 ms, 43.9 MB
     public ListNode detectCycle(ListNode head) {
