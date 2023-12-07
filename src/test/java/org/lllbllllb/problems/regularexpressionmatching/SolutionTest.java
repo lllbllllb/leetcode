@@ -66,4 +66,25 @@ class SolutionTest {
 
         assertTrue(res);
     }
+
+    @Test
+    void isMatch9() {
+        var res = solution.isMatch("mississippi", "mis*is*p*.");
+
+        assertFalse(res);
+    }
+
+    @Test
+    void isMatch10() {
+        var res = solution.isMatch("aab", "c*a*b");
+
+        assertTrue(res);
+    }
+
+    @Test
+    void isMatch11() {
+        var res = solution.isMatch("aaa", "aaaa");
+
+        assertFalse(res);
+    }
 }
