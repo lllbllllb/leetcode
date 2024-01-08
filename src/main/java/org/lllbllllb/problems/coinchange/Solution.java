@@ -27,8 +27,13 @@ class Solution {
         return dp[amount] != amount + 1 ? dp[amount] : -1;
     }
 
-    // Time Limit Exceeded (brute force)
-    public int coinChange1(int[] coins, int amount) {
+}
+
+
+// Time Limit Exceeded (brute force)
+class Solution1 {
+
+    public int coinChange(int[] coins, int amount) {
         var counts = new ArrayList<Integer>();
 
         dfsNoMem(coins, amount, 0, counts);

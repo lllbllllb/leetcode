@@ -7,10 +7,10 @@ import java.util.Map;
 /**
  * <a href="https://leetcode.com/problems/burst-balloons/">312. Burst Balloons</a>
  */
+// O(n^3)
+// 109ms, 41.84MB
 class Solution {
 
-    // O(n^3)
-    // 109ms, 41.84MB
     public int maxCoins(int[] nums) {
         var mem = new int[nums.length][nums.length];
 
@@ -23,7 +23,7 @@ class Solution {
         return dfs(nums, 0, nums.length - 1, mem);
     }
 
-    private int dfs(int[] nums, int leftCursor, int rightCursor, int[][]mem) {
+    private int dfs(int[] nums, int leftCursor, int rightCursor, int[][] mem) {
         var maxCoins = 0;
 
         if (leftCursor > rightCursor) {
@@ -51,9 +51,14 @@ class Solution {
         return mem[leftCursor][rightCursor] = maxCoins;
     }
 
-    // O(2^n)
-    // Time Limit Exceeded
-    public int maxCoins1(int[] nums) {
+
+}
+
+// O(2^n)
+// Time Limit Exceeded
+class Solution1 {
+
+    public int maxCoins(int[] nums) {
         return dfs(nums, new HashMap<>());
     }
 
@@ -103,4 +108,3 @@ class Solution {
         return maxCoins;
     }
 }
-

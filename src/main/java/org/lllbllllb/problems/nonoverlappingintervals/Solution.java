@@ -6,9 +6,9 @@ import java.util.Comparator;
 /**
  * <a href="https://leetcode.com/problems/non-overlapping-intervals/">435. Non-overlapping Intervals</a>
  */
+// 6 ms, 86.3 MB
 class Solution {
 
-    // 6 ms, 86.3 MB
     public int eraseOverlapIntervals(int[][] intervals) {
         var min = Integer.MAX_VALUE;
         var max = Integer.MIN_VALUE;
@@ -51,9 +51,12 @@ class Solution {
 
         return count;
     }
+}
 
-    // 85 ms, 100.8 MB
-    public int eraseOverlapIntervals1(int[][] intervals) {
+// 85 ms, 100.8 MB
+class Solution1 {
+
+    public int eraseOverlapIntervals(int[][] intervals) {
         Arrays.sort(intervals, Comparator.comparingInt(interval -> interval[0]));
 
         var count = 0;

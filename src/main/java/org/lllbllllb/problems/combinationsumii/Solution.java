@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * <a href="https://leetcode.com/problems/combination-sum-ii/">40. Combination Sum II</a>
  */
+// 2 ms, 43.1 MB
 class Solution {
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
@@ -15,7 +16,6 @@ class Solution {
         return backtracking(candidates, 0, target, new ArrayList<>(), new ArrayList<>());
     }
 
-    // 2 ms, 43.1 MB
     private List<List<Integer>> backtracking(int[] candidates, int cursor, int target, List<Integer> sub, List<List<Integer>> result) {
         if (target == 0) {
             result.add(List.copyOf(sub));
@@ -43,8 +43,18 @@ class Solution {
         return result;
     }
 
-    // 4 ms, 43.2 MB
-    private List<List<Integer>> backtracking1(int[] candidates, int cursor, int target, List<Integer> sub, List<List<Integer>> result) {
+}
+
+// 4 ms, 43.2 MB
+class Solution1 {
+
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        Arrays.sort(candidates);
+
+        return backtracking(candidates, 0, target, new ArrayList<>(), new ArrayList<>());
+    }
+
+    private List<List<Integer>> backtracking(int[] candidates, int cursor, int target, List<Integer> sub, List<List<Integer>> result) {
         if (target == 0) {
             result.add(List.copyOf(sub));
 
@@ -62,7 +72,7 @@ class Solution {
 
             if (prevCandidate != candidate) {
                 sub.add(candidate);
-                backtracking1(candidates, i + 1, target - candidate, sub, result);
+                backtracking(candidates, i + 1, target - candidate, sub, result);
                 prevCandidate = sub.remove(sub.size() - 1);
             }
         }

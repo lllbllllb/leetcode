@@ -2,9 +2,12 @@ package org.lllbllllb.problems.coinchangeii;
 
 import java.util.Arrays;
 
+/**
+ * <a href="https://leetcode.com/problems/coin-change-ii/description/">518. Coin Change II</a>
+ */
+// 2ms, 40.48MB
 class Solution {
 
-    // 2ms, 40.48MB
     public int change(int amount, int[] coins) {
         var dp = new int[amount + 1];
         dp[0] = 1;
@@ -18,7 +21,11 @@ class Solution {
         return dp[amount];
     }
 
-    // 9ms, 44.52MB
+}
+
+// 9ms, 44.52MB
+class Solution1 {
+
     public int change1(int amount, int[] coins) {
         Arrays.sort(coins);
 
@@ -41,9 +48,12 @@ class Solution {
 
         return dp[amount][0];
     }
+}
 
-    // 145ms, 52.27MB
-    public int change2(int amount, int[] coins) {
+// 145ms, 52.27MB
+class Solution2 {
+
+    public int change(int amount, int[] coins) {
         return dfs(amount, coins, 0, new Integer[amount + 1][coins.length]);
     }
 
@@ -72,9 +82,12 @@ class Solution {
 
         return changes;
     }
+}
 
-    // Time Limit Exceeded
-    public int change3(int amount, int[] coins) {
+// Time Limit Exceeded
+class Solution3 {
+
+    public int change(int amount, int[] coins) {
         return dfs(amount, coins, 0);
     }
 
@@ -97,5 +110,4 @@ class Solution {
 
         return changes;
     }
-
 }

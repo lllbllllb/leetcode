@@ -41,8 +41,12 @@ class Solution {
         return cityCosts[dst] != Integer.MAX_VALUE ? cityCosts[dst] : -1;
     }
 
-    // 6 ms, 42.66 MB
-    public int findCheapestPrice1(int n, int[][] flights, int src, int dst, int k) {
+}
+
+// 6 ms, 42.66 MB
+class Solution1 {
+
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         var cityCosts = new int[n];
         Arrays.fill(cityCosts, Integer.MAX_VALUE);
         cityCosts[src] = 0;
@@ -71,5 +75,4 @@ class Solution {
 
         return cityCosts[dst] != Integer.MAX_VALUE ? cityCosts[dst] : -1;
     }
-
 }

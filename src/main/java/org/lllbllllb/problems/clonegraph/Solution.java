@@ -55,15 +55,27 @@ class Solution {
         return clonedNode;
     }
 
-    // 26 ms, 42.6 MB
-    private Node dfs1(Node originalNode, Map<Integer, Node> clonedNodes) {
+}
+
+// 26 ms, 42.6 MB
+class Solution1 {
+
+    public Node cloneGraph(Node node) {
+        if (node == null) {
+            return null;
+        }
+
+        return dfs(node, new HashMap<>());
+    }
+
+    private Node dfs(Node originalNode, Map<Integer, Node> clonedNodes) {
         var clonedNode = clonedNodes.computeIfAbsent(originalNode.val, Node::new);
 
         for (var neighbor : originalNode.neighbors) {
             if (clonedNodes.containsKey(neighbor.val)) {
                 clonedNode.neighbors.add(clonedNodes.get(neighbor.val));
             } else {
-                clonedNode.neighbors.add(dfs1(neighbor, clonedNodes));
+                clonedNode.neighbors.add(dfs(neighbor, clonedNodes));
             }
         }
 

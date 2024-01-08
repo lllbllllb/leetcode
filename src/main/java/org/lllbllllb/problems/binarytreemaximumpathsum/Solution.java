@@ -20,11 +20,11 @@ import org.lllbllllb.domain.TreeNode;
  * }
  * </pre>
  */
+// 1 ms, 44.4 MB
 class Solution {
 
     private int max;
 
-    // 1 ms, 44.4 MB
     public int maxPathSum(TreeNode node) {
         max = node.val;
         maxPath(node);
@@ -45,15 +45,21 @@ class Solution {
         return Math.max(left, right) + node.val;
     }
 
-    // 1 ms, 44.4 MB
-    public int maxPathSum1(TreeNode node) {
+}
+
+// 1 ms, 44.4 MB
+class Solution1 {
+
+    private int max;
+
+    public int maxPathSum(TreeNode node) {
         max = -2000;
         maxPath(node);
 
         return max;
     }
 
-    public int maxPath1(TreeNode node) {
+    public int maxPath(TreeNode node) {
         if (node == null) {
             return -2000;
         }

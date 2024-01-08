@@ -10,11 +10,10 @@ import java.util.PriorityQueue;
 /**
  * <a href="https://leetcode.com/problems/network-delay-time/">743. Network Delay Time</a>
  */
+// Dijkstra's algorithm, min-heap
+// 12 ms, 44.7 MB
 class Solution {
 
-
-    // Dijkstra's algorithm, min-heap
-    // 12 ms, 44.7 MB
     public int networkDelayTime(int[][] times, int n, int k) {
         var sourceToPathsTimesMap = new HashMap<Integer, List<int[]>>();
 
@@ -72,9 +71,12 @@ class Solution {
 
         return maxCost;
     }
+}
 
-    // 17 ms, 46.8 MB
-    public int networkDelayTime1(int[][] times, int n, int k) {
+// 17 ms, 46.8 MB
+class Solution1 {
+
+    public int networkDelayTime(int[][] times, int n, int k) {
         var nodeToMinTime = new int[n + 1]; // 1-index
         Arrays.fill(nodeToMinTime, Integer.MAX_VALUE);
         nodeToMinTime[k] = 0;

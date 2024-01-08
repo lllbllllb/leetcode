@@ -3,9 +3,9 @@ package org.lllbllllb.problems.backspacestringcompare;
 /**
  * <a href="https://leetcode.com/problems/backspace-string-compare/">844. Backspace String Compare</a>
  */
+// 0 ms, 41 MB, mem: o(1)
 class Solution {
 
-    // 0 ms, 41 MB, mem: o(1)
     public boolean backspaceCompare(String s, String t) {
         var sCursor = s.length() - 1;
         var tCursor = t.length() - 1;
@@ -38,8 +38,8 @@ class Solution {
             }
 
             if (sCursor > -1 && tCursor > -1 && s.charAt(sCursor) != t.charAt(tCursor)
-                || sCursor > -1 && tCursor < 0
-                || tCursor > -1 && sCursor < 0) {
+                    || sCursor > -1 && tCursor < 0
+                    || tCursor > -1 && sCursor < 0) {
                 return false;
             }
 
@@ -49,9 +49,11 @@ class Solution {
 
         return sCursor < 0 && tCursor < 0;
     }
+}
 
-    // 0 ms, 40.8 MB, mem: O(N)
-    public boolean backspaceCompare1(String s, String t) {
+// 0 ms, 40.8 MB, mem: O(N)
+class Solution1 {
+    public boolean backspaceCompare(String s, String t) {
         s = getResultString(s);
         t = getResultString(t);
 

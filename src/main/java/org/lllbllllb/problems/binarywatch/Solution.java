@@ -6,12 +6,12 @@ import java.util.List;
 /**
  * <a href="https://leetcode.com/problems/binary-watch/">401. Binary Watch</a>
  */
+// backtracking
+// 0-1 ms
 class Solution {
 
     private static final int[] BITS = new int[]{8, 4, 2, 1, 32, 16, 8, 4, 2, 1};
 
-    // backtracking
-    // 0-1 ms
     public List<String> readBinaryWatch(int turnedOn) {
         if (turnedOn > 8) {
             return List.of();
@@ -59,9 +59,13 @@ class Solution {
         }
     }
 
-    // no backtracking, bruteforce
-    // 1 ms
-    public List<String> readBinaryWatch1(int turnedOn) {
+}
+
+// no backtracking, bruteforce
+// 1 ms
+class Solution1 {
+
+    public List<String> readBinaryWatch(int turnedOn) {
         if (turnedOn > 8) {
             return List.of();
         }
@@ -72,8 +76,8 @@ class Solution {
             for (int m = 0; m < 60; m++) {
                 if (Integer.bitCount(h) + Integer.bitCount(m) == turnedOn) {
                     var time = new StringBuilder()
-                        .append(h)
-                        .append(":");
+                            .append(h)
+                            .append(":");
 
                     if (m < 10) {
                         time.append(0);

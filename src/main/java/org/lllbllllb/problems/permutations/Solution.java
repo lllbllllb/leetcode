@@ -33,8 +33,12 @@ class Solution {
         }
     }
 
-    // 1 ms, 43 MB
-    public List<List<Integer>> permute2(int[] nums) {
+}
+
+// 1 ms, 43 MB
+class Solution1 {
+
+    public List<List<Integer>> permute(int[] nums) {
         var res = new ArrayList<List<Integer>>();
 
         backtracking(nums, res, 0);

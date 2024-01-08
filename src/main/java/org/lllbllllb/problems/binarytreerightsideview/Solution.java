@@ -1,10 +1,10 @@
 package org.lllbllllb.problems.binarytreerightsideview;
 
+import org.lllbllllb.domain.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import org.lllbllllb.domain.TreeNode;
 
 /**
  * <a href="https://leetcode.com/problems/binary-tree-right-side-view/">199. Binary Tree Right Side View</a>
@@ -24,9 +24,9 @@ import org.lllbllllb.domain.TreeNode;
  * }
  * </pre>
  */
+// 0 ms, 40.7 MB
 class Solution {
 
-    // 0 ms, 40.7 MB
     public List<Integer> rightSideView(TreeNode root) {
         var res = new ArrayList<Integer>();
 
@@ -48,9 +48,12 @@ class Solution {
         rightSideView(node.left, result, level + 1);
     }
 
+}
 
-    // 1 ms, 40.7 MB
-    public List<Integer> rightSideView1(TreeNode root) {
+// 1 ms, 40.7 MB
+class Solution1 {
+
+    public List<Integer> rightSideView(TreeNode root) {
         var res = new ArrayList<Integer>();
 
         if (root != null) {

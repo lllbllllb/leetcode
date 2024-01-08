@@ -30,13 +30,13 @@ class Solution {
     }
 
     private void backtracking(
-        int n,
-        int row,
-        Set<Integer> occupiedCols,
-        Set<Integer> negativeDiags,
-        Set<Integer> positiveDiags,
-        char[][] board,
-        List<List<String>> combinations
+            int n,
+            int row,
+            Set<Integer> occupiedCols,
+            Set<Integer> negativeDiags,
+            Set<Integer> positiveDiags,
+            char[][] board,
+            List<List<String>> combinations
     ) {
         if (n == 0) {
             var combination = new ArrayList<String>();
@@ -69,12 +69,19 @@ class Solution {
             }
         }
     }
+}
 
-    // 8 ms, 42.9 MB
-    public List<List<String>> solveNQueens2(int n) {
+// 8 ms, 42.9 MB
+class Solution1 {
+
+    private static final char QUEEN = 'Q';
+
+    private static final char EMPTY = '.';
+
+    public List<List<String>> solveNQueens(int n) {
         var combinations = new ArrayList<List<Integer>>();
 
-        backtracking2(n, n, 0, new ArrayList<>(), combinations);
+        backtracking(n, n, 0, new ArrayList<>(), combinations);
 
         var res = new ArrayList<List<String>>();
 
@@ -98,7 +105,7 @@ class Solution {
         return res;
     }
 
-    private void backtracking2(int n, int count, int row, List<Integer> quinnCols, List<List<Integer>> combinations) {
+    private void backtracking(int n, int count, int row, List<Integer> quinnCols, List<List<Integer>> combinations) {
         if (count == 0) {
             combinations.add(List.copyOf(quinnCols));
 
@@ -106,15 +113,15 @@ class Solution {
         }
 
         for (var col = 0; col < n; col++) {
-            if (isPlaceFree2(row, col, quinnCols)) {
+            if (isPlaceFree(row, col, quinnCols)) {
                 quinnCols.add(col);
-                backtracking2(n, count - 1, row + 1, quinnCols, combinations);
+                backtracking(n, count - 1, row + 1, quinnCols, combinations);
                 quinnCols.remove(quinnCols.size() - 1);
             }
         }
     }
 
-    private boolean isPlaceFree2(int row, int col, List<Integer> quinCols) {
+    private boolean isPlaceFree(int row, int col, List<Integer> quinCols) {
         for (int quinRow = 0; quinRow < quinCols.size(); quinRow++) {
             var quinCol = quinCols.get(quinRow);
 
@@ -125,28 +132,35 @@ class Solution {
 
         return true;
     }
+}
 
-    // 7 ms, 43.5 MB
-    public List<List<String>> solveNQueens1(int n) {
+// 7 ms, 43.5 MB
+class Solution2 {
+
+    private static final char QUEEN = 'Q';
+
+    private static final char EMPTY = '.';
+
+    public List<List<String>> solveNQueens(int n) {
         var res = new ArrayList<List<String>>();
 
-        backtracking1(n, 0, res, new boolean[n][n], new ArrayList<>());
+        backtracking(n, 0, res, new boolean[n][n], new ArrayList<>());
 
         return res;
     }
 
-    private void backtracking1(int n, int row, List<List<String>> res, boolean[][] board, List<QueenPos> queens) {
+    private void backtracking(int n, int row, List<List<String>> res, boolean[][] board, List<QueenPos> queens) {
         if (n == 0) {
-            res.add(saveBoard1(board));
+            res.add(saveBoard(board));
 
             return;
         }
 
         for (int col = 0; col < board[0].length; col++) {
-            if (isPlaceFree1(row, col, queens)) {
+            if (isPlaceFree(row, col, queens)) {
                 board[row][col] = true;
                 queens.add(new QueenPos(row, col));
-                backtracking1(n - 1, row + 1, res, board, queens);
+                backtracking(n - 1, row + 1, res, board, queens);
                 board[row][col] = false;
                 queens.remove(queens.size() - 1);
             }
@@ -154,7 +168,7 @@ class Solution {
 
     }
 
-    private boolean isPlaceFree1(int row, int col, List<QueenPos> queens) {
+    private boolean isPlaceFree(int row, int col, List<QueenPos> queens) {
         for (var queenPos : queens) {
             var i = queenPos.row();
             var j = queenPos.col();
@@ -167,7 +181,7 @@ class Solution {
         return true;
     }
 
-    private List<String> saveBoard1(boolean[][] board) {
+    private List<String> saveBoard(boolean[][] board) {
         var res = new ArrayList<String>();
 
         for (var cell : board) {

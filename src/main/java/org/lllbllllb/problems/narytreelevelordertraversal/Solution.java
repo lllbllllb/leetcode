@@ -26,9 +26,9 @@ import java.util.List;
 /**
  * <a href="https://leetcode.com/problems/n-ary-tree-level-order-traversal/">429. N-ary Tree Level Order Traversal</a>
  */
+// 1 ms, 43.7 MB
 class Solution {
 
-    // 1 ms, 43.7 MB
     public List<List<Integer>> levelOrder(Node root) {
         var levelOrderTraversal = new ArrayList<List<Integer>>();
 
@@ -53,8 +53,12 @@ class Solution {
         }
     }
 
-    // 3 ms, 43.6 MB
-    public List<List<Integer>> levelOrder1(Node root) {
+}
+
+// 3 ms, 43.6 MB
+class Solution1 {
+
+    public List<List<Integer>> levelOrder(Node root) {
         if (root == null) {
             return List.of();
         }

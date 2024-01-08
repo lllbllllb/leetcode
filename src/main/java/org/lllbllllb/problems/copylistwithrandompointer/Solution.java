@@ -21,9 +21,9 @@ import java.util.HashMap;
  * </pre>
  */
 
+// 0 ms, 41.7 MB
 class Solution {
 
-    // 0 ms, 41.7 MB
     public Node copyRandomList(Node head) {
         var sourceToNewMap = new HashMap<Node, Node>();
         var tmp = head;
@@ -44,8 +44,12 @@ class Solution {
         return sourceToNewMap.get(head);
     }
 
-    // 0 ms, 41.9 MB
-    public Node copyRandomList1(Node head) {
+}
+
+// 0 ms, 41.9 MB
+class Solution1 {
+
+    public Node copyRandomList(Node head) {
         if (head == null) {
             return null;
         }

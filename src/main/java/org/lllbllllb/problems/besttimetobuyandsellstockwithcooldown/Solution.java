@@ -3,9 +3,9 @@ package org.lllbllllb.problems.besttimetobuyandsellstockwithcooldown;
 /**
  * <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/">309. Best Time to Buy and Sell Stock with Cooldown</a>
  */
+// 1 ms, 41.66MB
 class Solution {
 
-    // 1 ms, 41.66MB
     public int maxProfit(int[] prices) {
         var mem = new Integer[prices.length][4];
 
@@ -45,8 +45,12 @@ class Solution {
         return profits[cursor][state];
     }
 
-    // Time Limit Exceeded
-    public int maxProfit2(int[] prices) {
+}
+
+// Time Limit Exceeded
+class Solution1 {
+
+    public int maxProfit(int[] prices) {
         return dfs(prices, 0, 0, -1, 0);
     }
 
@@ -69,5 +73,4 @@ class Solution {
 
         return cooldownProfit;
     }
-
 }

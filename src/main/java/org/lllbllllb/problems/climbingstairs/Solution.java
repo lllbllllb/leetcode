@@ -3,9 +3,9 @@ package org.lllbllllb.problems.climbingstairs;
 /**
  * <a href="https://leetcode.com/problems/climbing-stairs/">70. Climbing Stairs</a>
  */
+// 0 ms, 39 MB | fine-tuning
 class Solution {
 
-    // 0 ms, 39 MB | fine-tuning
     public int climbStairs(int n) {
         var one = 1;
         var two = 1;
@@ -19,8 +19,12 @@ class Solution {
         return two;
     }
 
-    // 0 ms, 39 MB | bottom up
-    public int climbStairs1(int n) {
+}
+
+// 0 ms, 39 MB | bottom up
+class Solution1 {
+
+    public int climbStairs(int n) {
         // [1, 1, 2, 3, 5, 8, 13, ..., m]
         var res = new int[n + 1];
         res[0] = 1;

@@ -7,9 +7,9 @@ import java.util.List;
 /**
  * <a href="https://leetcode.com/problems/count-and-say/description/">38. Count and Say</a>
  */
+// 7ms
 class Solution {
 
-    // 7ms
     public String countAndSay(int n) {
         var queue = new LinkedList<Integer>();
         queue.add(1);
@@ -53,8 +53,12 @@ class Solution {
         return res.toString();
     }
 
-    // 4ms
-    public String countAndSay1(int n) {
+}
+
+// 4ms
+class Solution1 {
+
+    public String countAndSay(int n) {
         var list = List.of(1);
 
         for (int i = 0; i < n - 1; i++) {

@@ -3,9 +3,9 @@ package org.lllbllllb.problems.addtwonumbers;
 /**
  * <a href="https://leetcode.com/problems/add-two-numbers/description/">2. Add Two Numbers</a>
  */
+// 2 ms, 42.5 MB
 class Solution {
 
-    // 2 ms, 42.5 MB
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         var headIsNext = new ListNode();
         var tmp = headIsNext;
@@ -45,9 +45,11 @@ class Solution {
 
         return headIsNext.next;
     }
+}
 
-    // 2 ms, 42.6 MB
-    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+// 2 ms, 42.6 MB
+class Solution1 {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         var debt = 0;
         ListNode resHead = null;
         ListNode resLast = null;
@@ -82,5 +84,4 @@ class Solution {
             }
         }
     }
-
 }

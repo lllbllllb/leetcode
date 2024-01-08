@@ -25,9 +25,9 @@ import org.lllbllllb.domain.TreeNode;
  * }
  * </pre>
  */
+// 0 ms, 42.9 MB
 class Solution {
 
-    // 0 ms, 42.9 MB
     public List<List<Integer>> levelOrder(TreeNode root) {
         var res = new ArrayList<List<Integer>>();
 
@@ -59,8 +59,12 @@ class Solution {
         return res;
     }
 
-    // 1 ms, 43.2 MB
-    public List<List<Integer>> levelOrder1(TreeNode root) {
+}
+
+// 1 ms, 43.2 MB
+class Solution1 {
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
         if (root == null) {
             return List.of();
         }

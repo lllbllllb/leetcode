@@ -7,9 +7,9 @@ import java.util.LinkedList;
 /**
  * <a href="https://leetcode.com/problems/car-fleet/">853. Car Fleet</a>
  */
+// 29 ms, 52.1 MB
 class Solution {
 
-    // 29 ms, 52.1 MB
     public int carFleet(int target, int[] position, int[] speed) {
         var cars = new int[target + 1];
 
@@ -43,8 +43,12 @@ class Solution {
     }
 
 
-    // 108 ms, 58 MB
-    public int carFleet1(int target, int[] position, int[] speed) {
+}
+
+// 108 ms, 58 MB
+class Solution1 {
+
+    public int carFleet(int target, int[] position, int[] speed) {
         var len = position.length;
         var cars = new Car[len];
 
@@ -71,9 +75,9 @@ class Solution {
     }
 
     public record Car(
-        int num,
-        int position,
-        int speed
+            int num,
+            int position,
+            int speed
     ) {
 
         public double arrival(int target) {

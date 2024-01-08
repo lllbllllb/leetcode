@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * <a href="https://leetcode.com/problems/partition-labels/">763. Partition Labels</a>
  */
+// 5 ms, 41.3 MB
 class Solution {
 
-    // 5 ms, 41.3 MB
     public List<Integer> partitionLabels(String s) {
         var charToLastIdx = new int[26];
 
@@ -39,9 +39,12 @@ class Solution {
 
         return res;
     }
+}
 
-    // 7 ms, 42.1 MB
-    public List<Integer> partitionLabels2(String s) {
+// 7 ms, 42.1 MB
+class Solution1 {
+
+    public List<Integer> partitionLabels(String s) {
         var intervals = new int[s.length()];
         var charToFromIdx = new HashMap<Character, Integer>();
 
@@ -76,9 +79,12 @@ class Solution {
 
         return res;
     }
+}
 
-    // 8 ms, 41.8 MB
-    public List<Integer> partitionLabels1(String s) {
+// 8 ms, 41.8 MB
+class Solution2 {
+
+    public List<Integer> partitionLabels(String s) {
         var charToInterval = new HashMap<Character, int[]>();
 
         for (int i = 0; i < s.length(); i++) {
@@ -114,5 +120,4 @@ class Solution {
 
         return res;
     }
-
 }

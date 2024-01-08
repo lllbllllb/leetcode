@@ -35,9 +35,12 @@ class Solution {
         dfs(grid, i + 1, j);
         dfs(grid, i, j + 1);
     }
+}
 
-    // Time Limit Exceeded
-    public int numIslands2(char[][] grid) {
+// Time Limit Exceeded
+class Solution1 {
+
+    public int numIslands(char[][] grid) {
         var count = 0;
         var directions = new int[][]{{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
         var bfs = new LinkedList<Integer>();
@@ -72,9 +75,12 @@ class Solution {
 
         return count;
     }
+}
 
-    // 11 ms, 50.1 MB
-    public int numIslands1(char[][] grid) {
+// 11 ms, 50.1 MB
+class Solution2 {
+
+    public int numIslands(char[][] grid) {
         var numIslands = 0;
         var xStack = new LinkedList<Integer>();
         var yStack = new LinkedList<Integer>();

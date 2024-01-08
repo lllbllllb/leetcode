@@ -3,9 +3,9 @@ package org.lllbllllb.problems.plusone;
 /**
  * <a href="https://leetcode.com/problems/plus-one/">66. Plus One</a>
  */
+// 0 ms, 43 MB
 class Solution {
 
-    // 0 ms, 43 MB
     public int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i > -1; i--) {
             if (digits[i] < 9) {
@@ -23,8 +23,12 @@ class Solution {
         return res;
     }
 
-    // 0 ms, 42.8 MB
-    public int[] plusOne1(int[] digits) {
+}
+
+// 0 ms, 42.8 MB
+class Solution1 {
+
+    public int[] plusOne(int[] digits) {
         var len = digits.length;
 
         if (digits[len - 1] != 9) {
