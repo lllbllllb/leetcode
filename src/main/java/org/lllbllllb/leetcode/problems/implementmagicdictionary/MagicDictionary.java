@@ -1,5 +1,8 @@
 package org.lllbllllb.leetcode.problems.implementmagicdictionary;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <a href="https://leetcode.com/problems/implement-magic-dictionary/">676. Implement Magic Dictionary</a>
  */
@@ -7,10 +10,6 @@ package org.lllbllllb.leetcode.problems.implementmagicdictionary;
 class MagicDictionary {
 
     private String[] dictionary;
-
-    public MagicDictionary() {
-
-    }
 
     // O(1)
     public void buildDict(String... dictionary) {
@@ -44,15 +43,102 @@ class MagicDictionary {
 
         return false;
     }
+
+}
+
+// 32ms, 46.18MB
+class MagicDictionary1 {
+
+    private final Map<Integer, TrieNode> sizeToTrieMap = new HashMap<>();
+
+    public void buildDict(String[] dictionary) {
+        for (var word : dictionary) {
+            var root = sizeToTrieMap.computeIfAbsent(word.length(), wl -> new TrieNode());
+            var trie = root.addChild(word.charAt(0));
+
+            for (int i = 1; i < word.length(); i++) {
+                trie = trie.addChild(word.charAt(i));
+            }
+        }
+    }
+
+    public boolean search(String searchWord) {
+        var root = sizeToTrieMap.get(searchWord.length());
+
+        return isMatch(searchWord, 0, root, 0);
+    }
+
+    private boolean isMatch(String word, int cursor, TrieNode parent, int missCount) {
+        if (parent == null) {
+            return false;
+        }
+
+        if (missCount == 2) {
+            return false;
+        }
+
+        if (cursor == word.length()) {
+            return missCount == 1;
+        }
+
+        var ch = word.charAt(cursor);
+
+        cursor++;
+
+        if (missCount == 1) {
+            var child = parent.getChild(ch);
+
+            return isMatch(word, cursor, child, missCount);
+        }
+
+        var chIdx = TrieNode.getChildrenIdx(ch);
+        var children = parent.getChildren();
+
+        for (int i = 0; i < children.length; i++) {
+            if (isMatch(word, cursor, children[i], i == chIdx ? missCount : missCount + 1)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static class TrieNode {
+
+        private final TrieNode[] children = new TrieNode[26];
+
+        public TrieNode addChild(char ch) {
+            var idx = getChildrenIdx(ch);
+
+            if (children[idx] == null) {
+                children[idx] = new TrieNode();
+            }
+
+            return children[idx];
+        }
+
+        public TrieNode getChild(char ch) {
+            var idx = getChildrenIdx(ch);
+
+            return children[idx];
+        }
+
+        public TrieNode[] getChildren() {
+            return children;
+        }
+
+        public static int getChildrenIdx(char ch) {
+            return ch - 'a';
+        }
+
+    }
+
 }
 
 // 914ms, 46.18MB
-class MagicDictionary1 {
+class MagicDictionary2 {
 
     private final TrieNode root = new TrieNode();
-
-    public MagicDictionary1() {
-    }
 
     // O(L_avg * N_dict)
     public void buildDict(String... dictionary) {
@@ -126,6 +212,7 @@ class MagicDictionary1 {
         public static int getChildrenIdx(char ch) {
             return ch - 'a';
         }
+
     }
 
 }
