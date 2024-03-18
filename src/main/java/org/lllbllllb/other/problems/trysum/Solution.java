@@ -13,7 +13,7 @@ import java.util.Set;
  * <br>
  * Follow-up: return a string of result numbers with operators like <strong>1+2-3+4</strong> or empty string.
  */
-public class Solution {
+class Solution {
 
     public String trySum(int[] nums, int target) {
         var res = new ArrayList<String>(nums.length * 2);

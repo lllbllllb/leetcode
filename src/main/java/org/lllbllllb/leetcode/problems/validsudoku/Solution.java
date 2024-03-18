@@ -6,9 +6,9 @@ package org.lllbllllb.leetcode.problems.validsudoku;
 class Solution {
 
     public boolean isValidSudoku(char[][] board) {
-        var columns = new int[10][10];
+        var columns = new int[9][9];
 //        var diagonals = new int[2][10];
-        var subBoxes = new int[10][10];
+        var subBoxes = new int[9][9];
 
         for (int i = 0; i < board.length; i++) {
             var row = new int[10];
